@@ -1,0 +1,12 @@
+{
+  "name": "Salesforce 女子部 #19",
+  "description": "Sample: ソースコード",
+  "env": {
+    "NODE_ENV": {
+      "description": "Environment",
+      "value": "production"
+    }
+  },
+  "repository": "https://github.com/tabesfdc/sfggjp019",
+  "success_url": "/"
+}
