@@ -12,8 +12,9 @@ router.get('/', function (req, res, next) {
   if (hostname.match(/^multi.prfm.jp/))
     res.render('index', { title: 'Heroku Meetup #23' });
 
-  res.status(400);
-  res.render('error');
+  let err = new Error('host not found');
+  err.status = 400;
+  next(err);
 });
 
 module.exports = router;
