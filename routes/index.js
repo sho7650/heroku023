@@ -7,6 +7,8 @@ router.get('/', function (req, res, next) {
 
   if (hostname.match(/^localhost/))
     res.render('local', { title: 'access to localhost' });
+  if (hostname.match(/^prfm.info/))
+    res.render('prfm', { title: 'access to Perfume' });
   if (hostname.match(/^multi.kashiyuka.info/))
     res.render('kashiyuka', { title: 'access to kashiyuka' });
   if (hostname.match(/^multi.prfm.jp/))
