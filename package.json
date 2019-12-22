@@ -6,6 +6,9 @@
     "start": "node ./bin/www",
     "test": "jest"
   },
+  "engines": {
+    "node": "12.13.1"
+  },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "^1.4.4",
