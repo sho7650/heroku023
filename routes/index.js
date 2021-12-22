@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
   else if (hostname.match(/^multi.kashiyuka.info/))
     res.render('kashiyuka', { title: 'access to kashiyuka' });
   else if (hostname.match(/^multi.prfm.jp/))
-    res.render('index', { title: 'Heroku Meetup #23' });
+    res.render('index', { title: 'access to prfm.jp' });
   else {
     let err = new Error('host not found');
     err.status = 400;
