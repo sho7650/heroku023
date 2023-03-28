@@ -1,12 +1,12 @@
 {
-  "name": "Salesforce 女子部 #19",
-  "description": "Sample: ソースコード",
+  "name": "Testing multi domain sites",
+  "description": "This site is a test of multi domain on Heroku",
   "env": {
     "NODE_ENV": {
       "description": "Environment",
       "value": "production"
     }
   },
-  "repository": "https://github.com/tabesfdc/sfggjp019",
+  "repository": "https://github.com/sho7650/heroku023",
   "success_url": "/"
 }
