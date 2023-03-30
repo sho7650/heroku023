@@ -18,9 +18,9 @@ router.get('/', function (req, res, next) {
       res.render('index', { title: 'access to prfm.jp' });
       break;
     default:
-      let err = new Error('host not found');
-      err.status = 400;
-      next(err);
+      //let err = new Error('host not found');
+      //err.status = 400;
+      //next(err);
       break;
   }
 });
