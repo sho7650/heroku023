@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const router = require('../routes/index');
 
+// need to declare "view engine" for using 'res.render'
 app.set("view engine", "ejs");
 app.use('/', router);
 
