@@ -8,6 +8,12 @@ const router = require('../routes/index');
 app.set("view engine", "ejs");
 app.use('/', router);
 
+// Register error handling middleware
+router.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.send(err.message);
+});
+
 describe('Routing', () => {
   test('GET / with localhost should render local template', async () => {
     const response = await request(app).get('/').set('host', 'localhost');
