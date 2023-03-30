@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const router = require('../routes/users');
 
-app.use('/', router);
+app.use('/users', router);
 
 describe('GET /users', () => {
   test('should return 200 and text "respond with a resource"', async () => {
