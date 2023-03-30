@@ -4,8 +4,15 @@ const express = require('express');
 const app = express();
 const router = require('../routes/index');
 
+// need to declare "view engine" for using 'res.render'
 app.set("view engine", "ejs");
 app.use('/', router);
+
+// Register error handling middleware
+router.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.send(err.message);
+});
 
 describe('Routing', () => {
   test('GET / with localhost should render local template', async () => {
