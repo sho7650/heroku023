@@ -1,12 +1,12 @@
-const request = require('supertest');
-const express = require('express');
+const request = require("supertest");
+const express = require("express");
 
 const app = express();
-const router = require('../routes/index');
+const router = require("../routes/index");
 
 // need to declare "view engine" for using 'res.render'
 app.set("view engine", "ejs");
-app.use('/', router);
+app.use("/", router);
 
 // Register error handling middleware
 router.use((err, req, res, next) => {
@@ -14,33 +14,35 @@ router.use((err, req, res, next) => {
   res.send(err.message);
 });
 
-describe('Routing', () => {
-  test('GET / with localhost should render local template', async () => {
-    const response = await request(app).get('/').set('host', 'localhost');
+describe("Routing", () => {
+  test("GET / with localhost should render local template", async () => {
+    const response = await request(app).get("/").set("host", "localhost");
     expect(response.status).toBe(200);
-    expect(response.text).toContain('access to localhost');
+    expect(response.text).toContain("access to localhost");
   });
 
-  test('GET / with prfm.info should render prfm template', async () => {
-    const response = await request(app).get('/').set('host', 'prfm.info');
+  test("GET / with prfm.info should render prfm template", async () => {
+    const response = await request(app).get("/").set("host", "prfm.info");
     expect(response.status).toBe(200);
-    expect(response.text).toContain('access to Perfume');
+    expect(response.text).toContain("access to Perfume");
   });
 
-  test('GET / with multi.kashiyuka.info should render kashiyuka template', async () => {
-    const response = await request(app).get('/').set('host', 'multi.kashiyuka.info');
+  test("GET / with multi.kashiyuka.info should render kashiyuka template", async () => {
+    const response = await request(app)
+      .get("/")
+      .set("host", "multi.kashiyuka.info");
     expect(response.status).toBe(200);
-    expect(response.text).toContain('access to kashiyuka');
+    expect(response.text).toContain("access to kashiyuka");
   });
 
-  test('GET / with multi.prfm.jp should render index template', async () => {
-    const response = await request(app).get('/').set('host', 'multi.prfm.jp');
+  test("GET / with multi.prfm.jp should render index template", async () => {
+    const response = await request(app).get("/").set("host", "multi.prfm.jp");
     expect(response.status).toBe(200);
-    expect(response.text).toContain('access to prfm.jp');
+    expect(response.text).toContain("access to prfm.jp");
   });
 
-  test('GET / with unknown host should return 400 error', async () => {
-    const response = await request(app).get('/').set('host', 'unknown.host');
+  test("GET / with unknown host should return 400 error", async () => {
+    const response = await request(app).get("/").set("host", "unknown.host");
     expect(response.status).toBe(400);
   });
 });
