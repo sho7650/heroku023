@@ -20,7 +20,7 @@
     "spdy": "^4.0.2"
   },
   "devDependencies": {
-    "jest": "^27.4.5",
+    "jest": "^30.4.2",
     "supertest": "^6.3.3"
   }
 }
